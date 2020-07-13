@@ -1,0 +1,16 @@
+@import 'header';
+@import 'intro';
+@import 'colors';
+@import 'constants';
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font;
+    font-size: 16px;
+    color: $font-dark;
+    padding-top: $body-padding-top;
+}

@@ -1,23 +1,5 @@
-/*
-logo: #FFAB5E
-accent: #FFAF96
-dark-accent: #D1A074
-font-black-accent: 301B08
-
-
-*/
-
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    color: #301b08;
-    padding-top: 20px;
-}
+@import "colors";
+@import "constants";
 
 header {
     display: flex;
@@ -37,7 +19,7 @@ header {
     height: 68px;
     width: 68px;
     padding-bottom: 2px;
-    background-color: #ffab5e;
+    background-color: $brand;
     border-radius: 6px;
     font-size: 1.2em;
     font-weight: bold;
@@ -76,19 +58,18 @@ header {
 
 .search-input {
     background-color: white;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
     border-radius: 6px;
     padding: 12px 6px 10px 6px;
-    font-size: .75em;
+    font-size: 0.75em;
     min-width: 200px;
-    font-family:"Open Sans", sans-serif;
-    transition: all .5 ease;
+    font-family: $font;
+    transition: all 0.5s ease;
 
-}
-
-.search-input:focus {
-    outline: none;
-    border-color:#D1A074;
+    &:focus {
+        outline: none;
+        border-color: $accent-dark;
+    }
 }
 
 .search-btn {
@@ -97,37 +78,34 @@ header {
     height: 22px;
     width: 22px;
     border: none;
-    background-color: #FFAF96;
+    background-color: #ffaf96;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
     padding: 0;
 
-}
-
-.search-btn:focus {
-    outline: none;
+    &:focus {
+        outline: none;
+    }
 }
 
 .search-btn-icon {
     color: white;
-    padding: 2px 0 0 2px;
 }
-
 
 .header-link {
     display: inline-block;
     text-align: center;
-    background-color: #FFAF96;
+    background-color: #ffaf96;
     border-radius: 6px;
     height: 38px;
     width: 38px;
     margin-right: 20px;
     color: white;
-}
 
-.header-link:last-child {
-    margin-right: 0;
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
 .link-icon {

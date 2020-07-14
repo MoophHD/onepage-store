@@ -12,6 +12,15 @@
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+            rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
@@ -53,25 +62,153 @@
             <div class="intro-wrapper">
                 <div class="intro-offer">
                     <h1 class="offer-text">
-                        Каждый день сотни покупателей доверяют нам
-                        самое ценное - своих питомцев
+                        Каждый день сотни покупателей доверяют нам самое ценное
+                        - своих питомцев
                     </h1>
                     <div class="offer-buttons">
-                        <button class="offer-btn offer-btn-primary">Посмотреть каталог</button>
-                        <button class="offer-btn offer-btn-secondary">Узнать почему</button>
+                        <button class="offer-btn offer-btn-primary">
+                            Посмотреть каталог
+                        </button>
+                        <button class="offer-btn offer-btn-secondary">
+                            Узнать почему
+                        </button>
                     </div>
                 </div>
                 <div class="intro-social">
-                    <a href="#" class="social-link social-link-vk"><i class="social-icon fab fa-vk"></i></a>
-                    <a href="#" class="social-link social-link-yt"><i class="social-icon fab fa-instagram"></i></a>
-                    <a href="#" class="social-link social-link-inst"><i class="social-icon fab fa-youtube"></i></a>
+                    <a href="#" class="social-link social-link-vk"
+                        ><i class="social-icon fab fa-vk"></i
+                    ></a>
+                    <a href="#" class="social-link social-link-yt"
+                        ><i class="social-icon fab fa-instagram"></i
+                    ></a>
+                    <a href="#" class="social-link social-link-inst"
+                        ><i class="social-icon fab fa-youtube"></i
+                    ></a>
                 </div>
             </div>
             <div class="intro-bg">
                 <div class="bg-overlay"></div>
 
-                <img src="img/kitty.png" class="bg-kitty"></img>
+                <img src="img/kitty.png" class="bg-kitty" />
             </div>
         </section>
+
+        <section class="bestsellers">
+            <div class="bestsellers-wrapper">
+                <h1 class="bestsellers-title title">
+                    Новинки и бестселлеры
+                </h1>
+                <div class="bestsellers-carousel owl-carousel owl-theme">
+                    <div class="bestsellers-item item">
+                        <img class="item-img" src="img/catfood.png" />
+                        <h2 class="item-title">
+                            Carnilove Salmon & Turkey for Kittens
+                        </h2>
+                        <p class="item-desc">
+                            Беззерновой корм для котят, лосось и индейка.
+                        </p>
+                        <div class="item-variants">
+                            <button class="item-variant">400гр</button>
+                            <button class="item-variant">800гр</button>
+                            <button
+                                class="item-variant item-variant-selected item-variant-discount item"
+                            >
+                                1.2кг
+                            </button>
+                            <button class="item-variant">1.8кг</button>
+                        </div>
+
+                        <div class="item-commerce">
+                            <span class="item-price item-price-discount"
+                                >18.70 руб</span
+                            >
+                            <button class="item-add">В корзину</button>
+                        </div>
+                    </div>
+
+                    <div class="bestsellers-item item">
+                        <img class="item-img" src="./img/catlitter.png" />
+                        <h2 class="item-title">
+                            Наполнитель Elegant Cat (яблоко)
+                        </h2>
+                        <p class="item-desc">
+                            Силикагелевый наполнитель с ароматом яблока.
+                        </p>
+
+                        <div class="item-variants">
+                            <button class="item-variant item-variant-selected">
+                                1.8л
+                            </button>
+                            <button class="item-variant">
+                                2.5л
+                            </button>
+                            <button class="item-variant">
+                                3.5л
+                            </button>
+                        </div>
+
+                        <div class="item-commerce">
+                            <span class="item-price">
+                                15.00 руб
+                            </span>
+                            <button class="item-add">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="bestsellers-item item">
+                        <img class="item-img" src="./img/catfood2.png" />
+                        <h2 class="item-title">
+                            Purina Pro Plan Sterilised Rabbit (Кролик)
+                        </h2>
+                        <p class="item-desc">
+                            Корм для стерилизованных котов и кошек
+                        </p>
+
+                        <div class="item-variants">
+                            <button class="item-variant item-variant-selected">
+                                400гр
+                            </button>
+                            <button class="item-variant">
+                                800гр
+                            </button>
+                        </div>
+
+                        <div class="item-commerce">
+                            <span class="item-price">
+                                30.00 руб
+                            </span>
+                            <button class="item-add">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="nav-btn nav-prev">
+                        <img
+                            class="nav-icon"
+                            src="img/nav-prev.svg"
+                            alt="prev"
+                        />
+                    </button>
+                    <button class="nav-btn nav-next">
+                        <img
+                            class="nav-icon"
+                            src="img/nav-next.svg"
+                            alt="prev"
+                        />
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        ></script>
+
+        <script type="text/javascript" src="./js/data.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
     </body>
 </html>

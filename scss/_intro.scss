@@ -4,7 +4,7 @@ $overlay-color: #fff3e8;
 
 .intro {
     height: calc(100vh - #{$header-height} - #{$body-padding-top});
-    padding: 100px 40% 50px 5%;
+    padding: 150px 0 50px 5%;
     position: relative;
 }
 
@@ -29,11 +29,8 @@ $overlay-color: #fff3e8;
 }
 
 .offer-text {
-    font-size: 1.75em;
-}
-
-.offer-buttons {
-    margin-top: 25px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
 }
 
 .offer-btn {
@@ -67,6 +64,7 @@ $overlay-color: #fff3e8;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    max-width: 50%;
 }
 
 .social-link {

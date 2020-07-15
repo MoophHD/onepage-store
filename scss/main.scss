@@ -1,8 +1,9 @@
 @import "header";
 @import "intro";
-@import "colors";
-@import "constants";
+@import "./misc/colors";
+@import "./misc/constants";
 @import "bestsellers";
+@import "catalog";
 
 * {
     margin: 0;
@@ -19,7 +20,6 @@ body {
 .title {
     font-size: 2.1em;
 }
-
 
 // .owl-carousel .owl-dots.disabled {
 //     display: block;

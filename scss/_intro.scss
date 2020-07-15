@@ -1,4 +1,4 @@
-@import "constants";
+@import "./misc/constants";
 
 $overlay-color: #fff3e8;
 
@@ -8,24 +8,30 @@ $overlay-color: #fff3e8;
     position: relative;
 }
 
-.intro-bg {
+.side-bg {
     position: absolute;
+    width: 440px;
+    background-color: $overlay-color;
+    z-index: -1;
+}
+
+.intro-bg {
     right: 0;
     bottom: 0;
-    z-index: -1;
-    width: 400px;
-    background-color: $overlay-color;
+    height: 100vh;
+
 }
 
 .bg-kitty {
     max-width: 100%;
     opacity: 0.5;
     background: transparent;
+    position: absolute;
+    bottom: 0;
 }
 
 .bg-overlay {
     background-color: $overlay-color;
-    height: 100vh;
 }
 
 .offer-text {

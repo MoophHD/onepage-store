@@ -1,10 +1,10 @@
-@import "colors";
+@import "./misc/colors";
 
 .bestsellers {
     background-color: $accent-light;
 }
 .bestsellers-wrapper {
-    padding: 50px 0;
+    padding: 100px 0;
     width: 90%;
     margin: auto;
     position: relative;
@@ -75,7 +75,6 @@
     font-weight: bold;
     font-size: 12px;
 
-    
     &-discount {
         position: relative;
         &::after {
@@ -106,8 +105,8 @@
             border-radius: 6px;
         }
         &::after {
-          top: 1px;
-          right: 1px;
+            top: 1px;
+            right: 1px;
         }
     }
 }
@@ -128,7 +127,7 @@
             position: absolute;
             bottom: calc(1.125em + 7px);
             left: 0;
-            font-size: .65em;
+            font-size: 0.65em;
             color: $inactive;
             text-decoration: line-through;
             content: "20 руб";
@@ -157,7 +156,6 @@
     outline: none;
 }
 
-
 .owl-carousel .owl-item img {
     width: auto;
 }
@@ -179,4 +177,8 @@
     border: none;
     z-index: 2;
     outline: none;
+}
+
+.owl-stage-outer {
+    padding-left: 35px;
 }

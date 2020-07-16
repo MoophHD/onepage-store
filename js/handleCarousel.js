@@ -1,7 +1,4 @@
 function handleCarousel() {
-  function getPriceString(n) {
-    return n.toFixed(2).toString();
-  }
 
   const newGoods = data.newGoods;
   const owl = $(".owl-carousel");
@@ -41,7 +38,7 @@ function handleCarousel() {
     console.log(`item index ${itemIndex}`);
     console.log(`variant index ${variantIndex}`);
 
-    price.text(`${getPriceString(variantData.price)} руб`);
+    price.text(getPriceString(variantData.price));
 
     price.removeClass("item-price-discount");
 

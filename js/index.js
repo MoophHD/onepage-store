@@ -1,4 +1,8 @@
+function getPriceString(n) {
+  return n.toFixed(2).toString() + " руб";
+}
+
 $(document).ready(() => {
-  //carousel.js
+  renderBestsellers(data.newGoods);
   handleCarousel();
 });

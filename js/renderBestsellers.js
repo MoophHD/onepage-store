@@ -1,14 +1,5 @@
-// selected & discount variant
-/*
-<button
-  class="item-variant item-variant-selected item-variant-discount item"
->
-1.2кг
-</button>
-*/
-
 // by default the 1st item is selected
-const getItemHtml = (id, imgSrc, title, desc, variants) => {
+const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
   return `<div data-id="${id}" class="bestsellers-item item">
       <img class="item-img" src="${imgSrc}" />
       <h2 class="item-title">
@@ -84,7 +75,7 @@ const handleVariantChange = () => {
 function renderBestsellers(goods) {
   const container = $(".bestsellers-carousel");
   Object.entries(goods).forEach( ([id, data]) => {
-    container.append(getItemHtml(id, data.img, data.title, data.desc, data.variants));
+    container.append(getItemHtmlBestsellers(id, data.img, data.title, data.desc, data.variants));
   });
   handleVariantChange();
 }

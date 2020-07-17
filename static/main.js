@@ -60,6 +60,55 @@ const data = {
       ],
     },
   },
+
+  goods: {
+    g0: {
+      img: "img/product1.png",
+      desc: "Диетические консервы Hill's m/d Diabetes /Weight, 250гр",
+      price: 13.37
+    },
+    g1: {
+      img: "img/product2.png",
+      desc: "Консервы Royal Canin Kitten Instinctive",
+      price: 13.37
+    },
+    g2: {
+      img: "img/mem.jpg",
+      desc: "Коты котята кошки, как я устал",
+      price: 13.37
+    },
+    g3: {
+      img: "img/hughughug.jpg",
+      desc: "Ну что, еще по одной",
+      price: 13.37
+    },
+    g4: {
+      img: "img/krisa.jpg",
+      desc: "Бяк, бяк, бяк",
+      price: 13.37
+    },
+    g5: {
+      img: "img/asu.jpg",
+      desc: "Асу-асу-асу",
+      price: 13.37
+    },
+    g6: {
+      img: "img/catgarage.jpg",
+      desc: "Продам катаж",
+      price: 13.37
+    },
+    g7: {
+      img: "img/zapivam.jpg",
+      desc: "Пивокот пивокот",
+      price: 13.37
+    },
+    g8: {
+      img: "img/kotkorobka.jpg",
+      desc: "Кот для коробки",
+      price: 13.37
+    },
+
+  }
 };
 
 function handleCarousel() {
@@ -91,19 +140,11 @@ function getPriceString(n) {
 $(document).ready(() => {
   renderBestsellers(data.newGoods);
   handleCarousel();
+  renderCatalog(data.goods);
 });
 
-// selected & discount variant
-/*
-<button
-  class="item-variant item-variant-selected item-variant-discount item"
->
-1.2кг
-</button>
-*/
-
 // by default the 1st item is selected
-const getItemHtml = (id, imgSrc, title, desc, variants) => {
+const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
   return `<div data-id="${id}" class="bestsellers-item item">
       <img class="item-img" src="${imgSrc}" />
       <h2 class="item-title">
@@ -179,7 +220,28 @@ const handleVariantChange = () => {
 function renderBestsellers(goods) {
   const container = $(".bestsellers-carousel");
   Object.entries(goods).forEach( ([id, data]) => {
-    container.append(getItemHtml(id, data.img, data.title, data.desc, data.variants));
+    container.append(getItemHtmlBestsellers(id, data.img, data.title, data.desc, data.variants));
   });
   handleVariantChange();
+}
+
+const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
+  return `<div class="catalog-product">
+            <img
+                class="product-img"
+                src="${imgSrc}"
+                alt="product ${id}"
+            />
+            <p class="product-desc">
+                ${desc}
+            </p>
+            <span class="product-price">${getPriceString(price)}</span>
+        </div>`;
+};
+
+function renderCatalog(goods) {
+  container = $(".catalog-products");
+  Object.entries(goods).forEach(([id, data]) => {
+    container.append(getItemHtmlCatalog(id, data.img, data.desc, data.price));
+  });
 }

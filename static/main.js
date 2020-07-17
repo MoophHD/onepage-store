@@ -1,6 +1,6 @@
 const data = {
-  newGoods: [
-    {
+  newGoods: {
+    ng0: {
       img: "./img/catfood.png",
       title: "Carnilove Salmon & Turkey for Kittens",
       desc: "Беззерновой корм для котят, лосось и индейка. ",
@@ -25,7 +25,7 @@ const data = {
         },
       ],
     },
-    {
+    ng1: {
       img: "./img/catlitter.png",
       title: "Наполнитель Elegant Cat (яблоко)",
       desc: "Силикагелевый наполнитель с ароматом яблока.",
@@ -44,7 +44,7 @@ const data = {
         },
       ],
     },
-    {
+    ng2: {
       img: "./img/catfood2.png",
       title: "Purina Pro Plan Sterilised Rabbit (Кролик)",
       desc: "Корм для стерилизованных котов и кошек",
@@ -59,16 +59,15 @@ const data = {
         },
       ],
     },
-  ],
+  },
 };
 
 function handleCarousel() {
-
   const newGoods = data.newGoods;
   const owl = $(".owl-carousel");
 
   owl.owlCarousel({
-    items: 3,
+    items: Object.keys(newGoods).length,
     loop: true,
     center: false,
     nav: true,
@@ -82,35 +81,6 @@ function handleCarousel() {
 
   $(".nav-prev").click(() => {
     owl.trigger("prev.owl.carousel");
-  });
-
-  $(".item-variant").click(function () {
-    console.log(`item variant click`);
-    const variantContainer = $(this).parent();
-    const variantIndex = variantContainer.children().index($(this));
-    const itemContainer = variantContainer.parent();
-    const itemIndex = $(".owl-item.active").index(itemContainer.parent());
-    const price = itemContainer.find(".item-price");
-
-    variantContainer
-      .children(".item-variant-selected")
-      .removeClass("item-variant-selected");
-    $(this).addClass("item-variant-selected");
-
-    const variantData = newGoods[itemIndex].variants[variantIndex];
-
-    console.log(`item index ${itemIndex}`);
-    console.log(`variant index ${variantIndex}`);
-
-    price.text(getPriceString(variantData.price));
-
-    price.removeClass("item-price-discount");
-
-    if (variantData.discount) {
-      $(this).addClass("item-variant-discount");
-      price.addClass("item-price-discount");
-      price.after().css(`content: ${variantData.originalPrice} руб`);
-    }
   });
 }
 
@@ -133,8 +103,8 @@ $(document).ready(() => {
 */
 
 // by default the 1st item is selected
-const getItemHtml = (imgSrc, title, desc, variants) => {
-  return `<div class="bestsellers-item item">
+const getItemHtml = (id, imgSrc, title, desc, variants) => {
+  return `<div data-id="${id}" class="bestsellers-item item">
       <img class="item-img" src="${imgSrc}" />
       <h2 class="item-title">
           ${title}
@@ -148,6 +118,7 @@ const getItemHtml = (imgSrc, title, desc, variants) => {
             (variant, ind) =>
               `<button 
               data-price="${variant.price}" 
+              data-discount="${variant.discount || false}" 
               class="item-variant item ${
                 variant.discount ? "item-variant-discount" : ""
               } ${
@@ -177,9 +148,38 @@ const getItemHtml = (imgSrc, title, desc, variants) => {
   </div>`;
 };
 
+const handleVariantChange = () => {
+  $(".item-variant").click(function () {
+    const container = $(this).parent();
+    const itemContainer = container.parent();
+    const priceContainer = itemContainer.find(".item-price");
+    const price = $(this).data().price;
+    const discounted = $(this).data().discount;
+    const originalPrice = $(this).data().originalPrice;
+
+    container
+      .children(".item-variant-selected")
+      .removeClass("item-variant-selected");
+    $(this).addClass("item-variant-selected");
+
+    console.log(priceContainer)
+    priceContainer.text(getPriceString(price));
+    priceContainer.removeClass("item-price-discount");
+
+    if (discounted) {
+      $(this).addClass("item-variant-discount");
+      priceContainer.addClass("item-price-discount");
+      priceContainer.after().css(`content: ${originalPrice} руб`);
+    }
+  });
+}
+
+
+
 function renderBestsellers(goods) {
   const container = $(".bestsellers-carousel");
-  goods.forEach(product => {
-    container.append(getItemHtml(product.img, product.title, product.desc, product.variants));
+  Object.entries(goods).forEach( ([id, data]) => {
+    container.append(getItemHtml(id, data.img, data.title, data.desc, data.variants));
   });
+  handleVariantChange();
 }

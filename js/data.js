@@ -1,6 +1,6 @@
 const data = {
-  newGoods: [
-    {
+  newGoods: {
+    ng0: {
       img: "./img/catfood.png",
       title: "Carnilove Salmon & Turkey for Kittens",
       desc: "Беззерновой корм для котят, лосось и индейка. ",
@@ -25,7 +25,7 @@ const data = {
         },
       ],
     },
-    {
+    ng1: {
       img: "./img/catlitter.png",
       title: "Наполнитель Elegant Cat (яблоко)",
       desc: "Силикагелевый наполнитель с ароматом яблока.",
@@ -44,7 +44,7 @@ const data = {
         },
       ],
     },
-    {
+    ng2: {
       img: "./img/catfood2.png",
       title: "Purina Pro Plan Sterilised Rabbit (Кролик)",
       desc: "Корм для стерилизованных котов и кошек",
@@ -59,5 +59,5 @@ const data = {
         },
       ],
     },
-  ],
+  },
 };

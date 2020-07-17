@@ -12,8 +12,7 @@ const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
         </div>`;
 };
 
-function renderCatalog(goods) {
-  container = $(".catalog-products");
+function handleCatalog(goods) {
   Object.entries(goods).forEach(([id, data]) => {
     container.append(getItemHtmlCatalog(id, data.img, data.desc, data.price));
   });

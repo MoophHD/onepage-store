@@ -3,7 +3,6 @@ function getPriceString(n) {
 }
 
 $(document).ready(() => {
-  renderBestsellers(data.newGoods);
-  handleCarousel();
-  renderCatalog(data.goods);
+  handleBestsellers(data.newGoods);
+  handleCatalog(data.goods);
 });

@@ -69,7 +69,7 @@ const data = {
     },
     g1: {
       img: "img/product2.png",
-      desc: "Консервы Royal Canin Kitten Instinctive",
+      desc: "Консервы Royal Canin Kitten Instinctive, 400гр",
       price: 13.37
     },
     g2: {

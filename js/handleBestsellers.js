@@ -1,3 +1,25 @@
+function attachCarouselBestsellers() {
+  const newGoods = data.newGoods;
+  const owl = $(".owl-carousel");
+
+  owl.owlCarousel({
+    items: Object.keys(newGoods).length,
+    loop: true,
+    center: false,
+    nav: true,
+    margin: 10,
+    pagination: true,
+  });
+
+  $(".nav-next").click(() => {
+    owl.trigger("next.owl.carousel");
+  });
+
+  $(".nav-prev").click(() => {
+    owl.trigger("prev.owl.carousel");
+  });
+}
+
 // by default the 1st item is selected
 const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
   return `<div data-id="${id}" class="bestsellers-item item">
@@ -44,7 +66,7 @@ const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
   </div>`;
 };
 
-const handleVariantChange = () => {
+const bindVariantChange = () => {
   $(".item-variant").click(function () {
     const container = $(this).parent();
     const itemContainer = container.parent();
@@ -58,7 +80,6 @@ const handleVariantChange = () => {
       .removeClass("item-variant-selected");
     $(this).addClass("item-variant-selected");
 
-    console.log(priceContainer)
     priceContainer.text(getPriceString(price));
     priceContainer.removeClass("item-price-discount");
 
@@ -70,12 +91,16 @@ const handleVariantChange = () => {
   });
 }
 
-
-
-function renderBestsellers(goods) {
+const renderBestsellers = (goods) => {
   const container = $(".bestsellers-carousel");
+
   Object.entries(goods).forEach( ([id, data]) => {
     container.append(getItemHtmlBestsellers(id, data.img, data.title, data.desc, data.variants));
   });
-  handleVariantChange();
+}
+
+function handleBestsellers(goods) {
+  renderBestsellers(goods);
+  attachCarouselBestsellers();
+  bindVariantChange();
 }

@@ -69,7 +69,7 @@ const data = {
     },
     g1: {
       img: "img/product2.png",
-      desc: "Консервы Royal Canin Kitten Instinctive",
+      desc: "Консервы Royal Canin Kitten Instinctive, 400гр",
       price: 13.37
     },
     g2: {
@@ -111,7 +111,7 @@ const data = {
   }
 };
 
-function handleCarousel() {
+function attachCarouselBestsellers() {
   const newGoods = data.newGoods;
   const owl = $(".owl-carousel");
 
@@ -132,16 +132,6 @@ function handleCarousel() {
     owl.trigger("prev.owl.carousel");
   });
 }
-
-function getPriceString(n) {
-  return n.toFixed(2).toString() + " руб";
-}
-
-$(document).ready(() => {
-  renderBestsellers(data.newGoods);
-  handleCarousel();
-  renderCatalog(data.goods);
-});
 
 // by default the 1st item is selected
 const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
@@ -189,7 +179,7 @@ const getItemHtmlBestsellers = (id, imgSrc, title, desc, variants) => {
   </div>`;
 };
 
-const handleVariantChange = () => {
+const bindVariantChange = () => {
   $(".item-variant").click(function () {
     const container = $(this).parent();
     const itemContainer = container.parent();
@@ -203,7 +193,6 @@ const handleVariantChange = () => {
       .removeClass("item-variant-selected");
     $(this).addClass("item-variant-selected");
 
-    console.log(priceContainer)
     priceContainer.text(getPriceString(price));
     priceContainer.removeClass("item-price-discount");
 
@@ -215,14 +204,18 @@ const handleVariantChange = () => {
   });
 }
 
-
-
-function renderBestsellers(goods) {
+const renderBestsellers = (goods) => {
   const container = $(".bestsellers-carousel");
+
   Object.entries(goods).forEach( ([id, data]) => {
     container.append(getItemHtmlBestsellers(id, data.img, data.title, data.desc, data.variants));
   });
-  handleVariantChange();
+}
+
+function handleBestsellers(goods) {
+  renderBestsellers(goods);
+  attachCarouselBestsellers();
+  bindVariantChange();
 }
 
 const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
@@ -239,9 +232,17 @@ const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
         </div>`;
 };
 
-function renderCatalog(goods) {
-  container = $(".catalog-products");
+function handleCatalog(goods) {
   Object.entries(goods).forEach(([id, data]) => {
     container.append(getItemHtmlCatalog(id, data.img, data.desc, data.price));
   });
 }
+
+function getPriceString(n) {
+  return n.toFixed(2).toString() + " руб";
+}
+
+$(document).ready(() => {
+  handleBestsellers(data.newGoods);
+  handleCatalog(data.goods);
+});

@@ -268,6 +268,8 @@ const bindQuantityCounter = () => {
     } else {
       quantity--
     }
+
+    quantity = Math.max(quantity, 1);
     product.data('quantity', quantity)
     priceContainer.text("" + quantity);
   });

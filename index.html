@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="static/main.css" />
     </head>
     <body>
-        <header>
+        <header id="header">
             <div class="header-lockup">
                 <span class="lockup-logo">
                     <span class="logo-word">Кись</span>
@@ -69,9 +69,9 @@
                         <button class="offer-btn offer-btn-primary">
                             Посмотреть каталог
                         </button>
-                        <button class="offer-btn offer-btn-secondary">
+                        <a href="#whyus" class="offer-btn offer-btn-secondary">
                             Узнать почему
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="intro-social">
@@ -130,7 +130,7 @@
             </div>
         </section>
 
-        <section class="whyus">
+        <section id="whyus" class="whyus">
             <div class="whyus-wrapper">
                 <h1 class="whyus-title title">
                     Почему мы
@@ -185,8 +185,30 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="whyup-scrollup">
+                    <a href="#header" class="scrollup-btn offer-btn offer-btn-secondary">
+                        <span class="scrollup-btn-text">Вверх</span>     
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                </div>
             </div>
         </section>
+
+        <footer>
+            <div class="header-lockup">
+                <span class="lockup-logo">
+                    <span class="logo-word">Кись</span>
+                    <span class="logo-word">Лизь</span>
+                </span>
+                <span class="lockup-slogan">Все для усатых друзей </span>
+            </div>
+
+            <div class="header-phone">
+                <span class="phone-number">8 800 55 35 35</span>
+                <span class="phone-title">Заказ звонка</span>
+            </div>
+        </footer>
         <script
             type="text/javascript"
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

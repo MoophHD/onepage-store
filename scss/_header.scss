@@ -6,6 +6,8 @@ header {
     align-items: center;
     width: 90%;
     margin: auto;
+    padding-top: $body-padding-top;
+    
 }
 
 .header-lockup {
@@ -83,7 +85,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
     padding: 0;
-
+    padding-top: 2px;
     &:focus {
         outline: none;
     }

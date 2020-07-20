@@ -60,6 +60,11 @@ $overlay-color: #fff3e8;
     }
 
     &-secondary {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: initial;
         border: 1px solid $accent-dark;
         background-color: white;
     }

@@ -3,6 +3,7 @@
 @import "bestsellers";
 @import "catalog";
 @import "whyus";
+@import "footer";
 @import "./misc/colors";
 @import "./misc/constants";
 
@@ -11,14 +12,21 @@
     box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     font-family: $font;
     font-size: 16px;
     color: $font-dark;
-    padding-top: $body-padding-top;
 }
 
 .title {
     font-size: 2.1em;
+}
+
+button:hover {
+    cursor: pointer;
 }
 

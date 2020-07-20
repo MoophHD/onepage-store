@@ -3,7 +3,8 @@ header {
   display: flex;
   align-items: center;
   width: 90%;
-  margin: auto; }
+  margin: auto;
+  padding-top: 20px; }
 
 .header-lockup {
   flex: 1;
@@ -69,7 +70,8 @@ header {
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0; }
+  padding: 0;
+  padding-top: 2px; }
   .search-btn:focus {
     outline: none; }
 
@@ -140,6 +142,11 @@ header {
     .offer-btn-primary:hover {
       background-color: #ff3030; }
   .offer-btn-secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: initial;
     border: 1px solid #d1a074;
     background-color: white; }
 
@@ -444,7 +451,8 @@ header {
 
 .whyus-wrapper {
   width: 90%;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
 
 .whyus-title {
   margin-bottom: 50px; }
@@ -472,7 +480,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
 
 .reason-img {
   max-height: 90px; }
@@ -480,15 +488,38 @@ header {
 .reason-title {
   margin-bottom: 10px; }
 
+.whyup-scrollup {
+  display: inline-block;
+  margin: auto;
+  margin-top: 50px; }
+
+.scrollup-btn {
+  margin: auto; }
+
+.scrollup-btn-text {
+  margin-right: 10px; }
+
+footer {
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto; }
+
 * {
   margin: 0;
   box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  color: #301b08;
-  padding-top: 20px; }
+  color: #301b08; }
 
 .title {
   font-size: 2.1em; }
+
+button:hover {
+  cursor: pointer; }

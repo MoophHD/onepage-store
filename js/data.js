@@ -107,6 +107,36 @@ const data = {
       desc: "Кот для коробки",
       price: 13.37
     },
+    g9: {
+      img: "img/zapivam.jpg",
+      desc: "Пивокот пивокот",
+      price: 9
+    },
+    g10: {
+      img: "img/kotkorobka.jpg",
+      desc: "Кот для коробки",
+      price: 10
+    },
+    g11: {
+      img: "img/zapivam.jpg",
+      desc: "Пивокот пивокот",
+      price: 11
+    },
+    g12: {
+      img: "img/kotkorobka.jpg",
+      desc: "Кот для коробки",
+      price: 12
+    },
+    g13: {
+      img: "img/zapivam.jpg",
+      desc: "Пивокот пивокот",
+      price: 13
+    },
+    g14: {
+      img: "img/kotkorobka.jpg",
+      desc: "Кот для коробки",
+      price: 14
+    },
 
   }
 };

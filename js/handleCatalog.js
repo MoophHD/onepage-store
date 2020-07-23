@@ -4,7 +4,23 @@ function handleCatalog(goods) {
 
   initialRender(catalog, goods, rowCount);
   handleCatalogLoad(catalog, goods, rowCount);
+
+  handleCollapseSelectbar();
+  bindSelectBarAdd();
 }
+
+const bindSelectBarAdd = () => {
+  $(window).resize(handleCollapseSelectbar);
+};
+
+const handleCollapseSelectbar = () => {
+  console.log(`!`);
+  if (window.screen.width < 1000) {
+    $(".selectbar-add").addClass("selectbar-add-collapsed");
+  } else {
+    $(".selectbar-add").removeClass("selectbar-add-collapsed");
+  }
+};
 
 const getCatalogRowCount = () => {
   const catalog = $(".catalog-products");
@@ -74,7 +90,10 @@ const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
                   <button class="quantity-btn quantity-btn-add">+</button>
                 </div>
               </div>
-              <button class="selectbar-add item-add">В корзину</button>
+              <button class="selectbar-add item-add">
+                <span>В корзину</span>
+                <i  class="fas fa-shopping-cart shop-icon"></i>
+              </button>
             </div>
         </div>`;
 };

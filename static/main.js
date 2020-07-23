@@ -64,7 +64,7 @@ const data = {
   goods: {
     g0: {
       img: "img/product1.png",
-      desc: "Диетические консервы Hill's m/d Diabetes /Weight, 250гр",
+      desc: "Диетические консервы Hill's m/d Diabetes, 250гр",
       price: 13.37
     },
     g1: {
@@ -149,9 +149,26 @@ function attachCarouselBestsellers() {
     items: Object.keys(newGoods).length,
     loop: true,
     center: false,
-    nav: true,
-    margin: 10,
-    pagination: true,
+    nav: false,
+    pagination: false,
+    margin: 0,
+    responsive:{
+      0:{
+          items:1,
+          nav: false,
+          pagination: false,
+      },
+      650:{
+          items:2,
+          nav: false,
+          pagination: false,
+      },
+      1000:{
+          items:3,
+          nav: false,
+          pagination: false,
+      }
+  }
   });
 
   $(".nav-next").click(() => {
@@ -254,7 +271,23 @@ function handleCatalog(goods) {
 
   initialRender(catalog, goods, rowCount);
   handleCatalogLoad(catalog, goods, rowCount);
+
+  handleCollapseSelectbar();
+  bindSelectBarAdd();
 }
+
+const bindSelectBarAdd = () => {
+  $(window).resize(handleCollapseSelectbar);
+};
+
+const handleCollapseSelectbar = () => {
+  console.log(`!`);
+  if (window.screen.width < 1000) {
+    $(".selectbar-add").addClass("selectbar-add-collapsed");
+  } else {
+    $(".selectbar-add").removeClass("selectbar-add-collapsed");
+  }
+};
 
 const getCatalogRowCount = () => {
   const catalog = $(".catalog-products");
@@ -324,7 +357,10 @@ const getItemHtmlCatalog = (id, imgSrc, desc, price) => {
                   <button class="quantity-btn quantity-btn-add">+</button>
                 </div>
               </div>
-              <button class="selectbar-add item-add">В корзину</button>
+              <button class="selectbar-add item-add">
+                <span>В корзину</span>
+                <i  class="fas fa-shopping-cart shop-icon"></i>
+              </button>
             </div>
         </div>`;
 };
@@ -366,6 +402,7 @@ const countRowElements = (gridSelector, itemSelector) => {
   );
   return potentialRowCount;
 };
+
 function getPriceString(n) {
   return n.toFixed(2).toString() + " руб";
 }

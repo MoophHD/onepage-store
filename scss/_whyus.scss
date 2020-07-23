@@ -64,3 +64,13 @@
 .scrollup-btn-text {
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    .whyus-reasons {
+        flex-direction: column;
+        font-size: .75em;
+    }
+    .reason-img-container {
+        transform: scale(.7);
+    }
+}

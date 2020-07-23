@@ -6,9 +6,26 @@ function attachCarouselBestsellers() {
     items: Object.keys(newGoods).length,
     loop: true,
     center: false,
-    nav: true,
-    margin: 10,
-    pagination: true,
+    nav: false,
+    pagination: false,
+    margin: 0,
+    responsive:{
+      0:{
+          items:1,
+          nav: false,
+          pagination: false,
+      },
+      650:{
+          items:2,
+          nav: false,
+          pagination: false,
+      },
+      1000:{
+          items:3,
+          nav: false,
+          pagination: false,
+      }
+  }
   });
 
   $(".nav-next").click(() => {

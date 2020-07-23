@@ -10,7 +10,7 @@ $overlay-color: #fff3e8;
 
 .side-bg {
     position: absolute;
-    width: 440px;
+    width: 30%;
     background-color: $overlay-color;
     z-index: -1;
 }
@@ -101,4 +101,42 @@ $overlay-color: #fff3e8;
     &-inst {
         background-color: #cd201f;
     }
+}
+
+@media only screen and (max-width: 500px) {
+    .intro {
+        padding-top: 50px;
+    }
+    .offer-btn-primary {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .bg-kitty {
+        display: none;
+    }
+
+    .intro-wrapper {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .offer-text {
+        font-size: 1.5em;
+    }
+
+    .offer-btn {
+        width: 150px;
+        font-size: .8em;
+        &-primary {
+            margin-right: 5px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
 }

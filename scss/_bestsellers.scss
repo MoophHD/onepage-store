@@ -182,3 +182,33 @@
 .owl-stage-outer {
     padding-left: 35px;
 }
+
+@media only screen and (max-width: 400px) {
+
+    .owl-item.active {
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .bestsellers-wrapper {
+        padding-bottom: 0;
+    }
+    .nav-btn {
+        transform: scale(0.5);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .bestsellers-item {
+        transform: scale(0.7);
+    }
+
+    .owl-stage-outer {
+        padding-left: 0;
+    }
+}
+
+.owl-dots {
+    display: none;
+}

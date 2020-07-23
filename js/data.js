@@ -64,7 +64,7 @@ const data = {
   goods: {
     g0: {
       img: "img/product1.png",
-      desc: "Диетические консервы Hill's m/d Diabetes /Weight, 250гр",
+      desc: "Диетические консервы Hill's m/d Diabetes, 250гр",
       price: 13.37
     },
     g1: {
